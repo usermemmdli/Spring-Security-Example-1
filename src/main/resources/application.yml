@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: Spring-Security-example
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: mustafa
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      schema: spring_security_example
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+      boot:allow_jdbc_metadata_access: false
