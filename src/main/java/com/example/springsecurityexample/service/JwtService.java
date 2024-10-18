@@ -53,7 +53,6 @@ public class JwtService {
         return Jwts.parser()
                 .setSigningKey(SECRET_KEY) //tokeni parse etmek ucun secret keyi menimsedir
                 .parseClaimsJws(token) //JWT tokeni parse eleyir ve bodysini alir
-                .getBody() //yeni claim eleyir
                 .getSubject(); //bayaq emaili subject kimi set elemisdik onu qaytarir burda
     }
 

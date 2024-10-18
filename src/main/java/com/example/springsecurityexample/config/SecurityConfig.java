@@ -22,15 +22,6 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable() //CSRF qorumasini disable eleyir. api de jwt istifade olunur deye disable oluna biler
-                .authorizeRequests()
-                //permitAll bu url ile her kese girisi serbest edir
-                .antMatchers("/api/auth/**").permitAll()
-                //sadece data gelirmi, api isleyirmi deye yoxlamaq ucun
-                .antMatchers("/api/v1/customers").permitAll()
-                //asagida ise yerde qalan requestler ucun authentifikasiya teleb edir
-                .anyRequest().authenticated();
-
         return http.build();
     }
 
